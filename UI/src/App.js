@@ -18,7 +18,7 @@ import ProjectDetails from './components/ProjectDetails';
 const { Sider, Content } = Layout;
 
 const App = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   return (
     <Router>
