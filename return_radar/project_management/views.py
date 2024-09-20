@@ -24,6 +24,7 @@ class ProjectMetricsView(APIView):
 
         # Calculate the net revenue after subtracting the investment
         net_revenue = total_generated_revenue - total_investment
+        profit_percentage = total_generated_revenue/total_investment * 100
         # Group by project_sector and count
         sector_wise_count = Project.objects.values('project_sector').annotate(count=Count('id')).order_by(
             'project_sector')
@@ -35,7 +36,8 @@ class ProjectMetricsView(APIView):
             'hold_projects': hold_projects,
             'total_investment': total_investment,
             'generated_revenue': net_revenue,
-            "sector_wise_count":list(sector_wise_count)
+            "sector_wise_count":list(sector_wise_count),
+            "profit": profit_percentage
         }
         return JsonResponse(data)
 # Project views

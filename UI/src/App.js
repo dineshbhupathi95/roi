@@ -14,6 +14,7 @@ import Users from './components/Users';
 import Help from './components/Help';
 import Dashboard from './components/Dashboard';
 import ProjectDetails from './components/ProjectDetails';
+import TestApp from './components/test';
 
 const { Sider, Content } = Layout;
 
@@ -42,6 +43,7 @@ const App = () => {
                 <Route path="/users" element={<Users />} />
                 <Route path="/help" element={<Help />} />
                 <Route path="/projects/:id" element={<ProjectDetails />} />
+                <Route path="/test" element={<TestApp />} />
 
               </Routes>
             </div>
